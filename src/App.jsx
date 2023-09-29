@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
+
 function App() {
+
+
   const [APIState, setAPIState] = useState({
     loading: false,
     error: false,
@@ -17,7 +20,7 @@ function App() {
       });
       
   }, []);
-  console.log(APIState.data);
+  console.log(APIState.data?.items[0].snippet.title);
 
   let content;
   if (APIState.loading) {
@@ -25,13 +28,14 @@ function App() {
   } else if (APIState.error) {
     content = <div>Oops! Something went wrong</div>;
   } else if (APIState.data?.length > 0) {
-    content = <ul>
-      {APIState.data.items.map((data) => {
-        return <li key={data.id}>
-          <span>{data.snippet.description}</span>
-        </li>
-      })}
-    </ul>
+    content = <h2>{APIState.data?.items[0].snippet.title}</h2>;
+    // content = <ul>
+    //   {APIState.data?.items.map((i) => {
+    //     return <li key={i.id}>
+    //       <span>{i[0].snippet.description}</span>
+    //     </li>
+    //   })}
+    // </ul>
   } else if (APIState.data?.length === 0) {
     content = <div>No data found</div>;
   }
