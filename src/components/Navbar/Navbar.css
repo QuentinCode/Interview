@@ -1,0 +1,29 @@
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #dcb6b6af;
+    position: fixed;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 1000;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    top: 0;
+    margin: 0 auto;
+}
+nav a {
+    color: #222222;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0 20px;
+}
+nav a:hover {
+    color: #5D58EA;
+}
